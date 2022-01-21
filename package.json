@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+	  "registry": "https://npm.pkg.github.com/@cameronjyoung"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.0",
     "@types/cors": "^2.8.12",
