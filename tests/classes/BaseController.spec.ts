@@ -13,7 +13,7 @@ describe('BaseController class tests', () => {
 		const exampleMethod: IMethod = {
 			type: MethodTypes.GET,
 			action: actionName,
-			handler: () => {
+			handler: async () => {
 
 			}
 		};
