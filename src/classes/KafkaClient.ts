@@ -43,9 +43,8 @@ export default class KafkaClient {
 		});
 	}
 
-	public async listenToTopics(topics: ITopic[]) { // INSERT INTERFACE HERE CONTAINING TOPICS AND HANDLER MAYBE INPUT?
+	public async listenToTopics(topics: ITopic[]) {
 		await this.consumer.connect();
-		console.log(1);
 		
 		topics.forEach(async (i) => {
 			await this.consumer.subscribe({topic: i.topic});
