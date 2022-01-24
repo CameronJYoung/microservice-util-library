@@ -1,4 +1,5 @@
 import IMethod from '../@types/IMethod';
+import ITopic from '../@types/ITopic';
 
 export default abstract class BaseController {
 	protected serviceName: string;
@@ -11,10 +12,13 @@ export default abstract class BaseController {
 	public getTopics() {
 		const methods = this.methods();
 		const serviceName = this.serviceName;
-		const topicArr: string[] = [];
+		const topicArr: ITopic[] = [];
 
 		methods.forEach((m) => {
-			topicArr.push(`${m.type}.${serviceName}.${m.action}`)
+			topicArr.push({
+				topic: `${m.type}.${serviceName}.${m.action}`,
+				handler: m.handler
+			})
 		})
 
 		return topicArr;
