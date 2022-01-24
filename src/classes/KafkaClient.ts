@@ -29,14 +29,14 @@ export default class KafkaClient {
 		this.consumer = this.kafkaInstance.consumer({ groupId: groupId });
 	}
 
-	public async produceMessage(message: Record<string, unknown>) {
+	public async produceMessage(message: Record<string, unknown>, topic: string) {
 		await this.producer.connect().catch((err) => {
 			pino.error(err);
 			return;
 		});
 	
 		await this.producer.send({
-			topic: 'testing-topic',
+			topic: topic,
 			messages: [
 				{
 					value: jsonToBuffer(message)
