@@ -26,7 +26,6 @@ describe('BaseController class tests', () => {
 			}
 		}
 		const testController = new TestController(serviceName);
-		console.log(testController.getTopics()[0]);
 		
 		expect(testController.getTopics()[0].topic).to.contain(serviceName).and.to.contain(actionName);
 		done();
