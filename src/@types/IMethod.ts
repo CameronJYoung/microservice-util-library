@@ -1,5 +1,5 @@
 import MethodTypes from './MethodTypes';
-import { MessageHandler } from '../utils/eachMessageHandler'
+import MessageHandler from '../@types/MessageHandler';
 
 export default interface IMethod {
 	type: MethodTypes;

@@ -1,4 +1,4 @@
-import { MessageHandler } from '../utils/eachMessageHandler';
+import MessageHandler from '../@types/MessageHandler';
 
 export default interface ITopic {
 	topic: string;
