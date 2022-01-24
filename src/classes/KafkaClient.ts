@@ -2,12 +2,7 @@ import { Consumer, Kafka, Producer, EachMessagePayload } from 'kafkajs';
 
 import pino from '../singletons/Logger';
 import { jsonToBuffer } from '../utils/messageConversions';
-import { MessageHandler } from '../utils/eachMessageHandler';
-
-export interface ITopic {
-	topic: string;
-	handler: MessageHandler
-}
+import ITopic from '../@types/ITopic';
 
 export default class KafkaClient {
 	private clientId: string;
