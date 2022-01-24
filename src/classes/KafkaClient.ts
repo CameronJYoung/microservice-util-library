@@ -38,7 +38,7 @@ export default class KafkaClient {
 				}
 			]
 		}).catch((err) => {
-			console.log(err);
+			pino.error(err);
 			return;
 		});
 	}
