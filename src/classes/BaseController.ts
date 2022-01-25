@@ -14,7 +14,7 @@ export default abstract class BaseController {
 		const serviceName = this.serviceName;
 		const topicArr: ITopic[] = [];
 
-		methods.forEach((m) => {
+		methods.map((m) => {
 			topicArr.push({
 				topic: `${m.type}.${serviceName}.${m.action}`,
 				handler: m.handler
