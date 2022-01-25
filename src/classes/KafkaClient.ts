@@ -58,4 +58,18 @@ export default class KafkaClient {
 
 
 	}
+
+	public async listenToTopic(topic: ITopic) {
+		await this.consumer.connect();
+		
+		await this.consumer.subscribe({topic: topic.topic});
+
+		await this.consumer.run({
+			eachMessage: async (message) => {
+				topic.handler(message, topic.topic);
+			}
+		});
+
+
+	}
 };
