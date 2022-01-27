@@ -1,4 +1,5 @@
 import KafkaClient from './classes/KafkaClient';
+import KafkaAdminClient from './classes/KafkaAdminClient';
 import KafkaClientFactory from './factories/KafkaClientFactory';
 import BaseController from './classes/BaseController';
 import * as messageConversions from './utils/messageConversions';
@@ -15,5 +16,6 @@ export {
 	MethodTypes,
 	IMethod,
 	BaseController,
+	KafkaAdminClient,
 	messageConversions
 };
