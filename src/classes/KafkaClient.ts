@@ -7,7 +7,7 @@ import ITopic from '../@types/ITopic';
 export default class KafkaClient {
 	private clientId: string;
 	private brokers: Array<string>;
-	private kafkaInstance: Kafka;
+	protected kafkaInstance: Kafka;
 	private producer: Producer;
 	private consumer: Consumer;
 
