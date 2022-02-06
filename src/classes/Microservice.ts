@@ -30,13 +30,17 @@ export default class Microservice {
 
 
 	public async run() {
+		console.log(1);
+		
 		if (this.adminTopic) {
+			console.log(2);
 			this.kafkaClient.produceMessage({
 				microserviceName: this.microserviceName,
 				topics: this.microserviceTopics
 			}, `${this.adminTopic}.registerService`)
 			
 		}
+		console.log(3);
 		await this.kafkaClient.listenToTopics(this.microserviceTopics);
 	}
 }

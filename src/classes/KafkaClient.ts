@@ -45,6 +45,7 @@ export default class KafkaClient {
 
 	public async listenToTopics(topics: ITopic[]) {
 		await this.consumer.connect();
+		console.log(4);
 		
 		topics.map(async (i) => {
 			await this.consumer.subscribe({topic: i.topic});
