@@ -2,6 +2,7 @@ import KafkaClient from './classes/KafkaClient';
 import KafkaAdminClient from './classes/KafkaAdminClient';
 import KafkaClientFactory from './factories/KafkaClientFactory';
 import BaseController from './classes/BaseController';
+import Microservice from './classes/Microservice';
 import * as messageConversions from './utils/messageConversions';
 import MethodTypes from './@types/MethodTypes';
 import MessageHandler from './@types/MessageHandler';
@@ -17,5 +18,6 @@ export {
 	IMethod,
 	BaseController,
 	KafkaAdminClient,
+	Microservice,
 	messageConversions
 };
