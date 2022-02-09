@@ -1,9 +1,13 @@
 import IMethod from '../@types/IMethod';
 import ITopic from '../@types/ITopic';
 
-export default abstract class BaseController {
+export interface IBaseController {
+	getTopics: () => ITopic[];
+}
+
+export default abstract class BaseController implements IBaseController {
 	protected serviceName: string;
-	abstract methods(): IMethod[]
+	abstract methods(): IMethod[];
 
 	constructor(serviceName: string) {
 		this.serviceName = serviceName;
@@ -18,8 +22,8 @@ export default abstract class BaseController {
 			topicArr.push({
 				topic: `${m.type}.${serviceName}.${m.action}`,
 				handler: m.handler
-			})
-		})
+			});
+		});
 
 		return topicArr;
 	}

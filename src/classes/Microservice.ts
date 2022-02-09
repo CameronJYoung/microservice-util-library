@@ -2,7 +2,12 @@ import BaseController from "./BaseController";
 import ITopic from "../@types/ITopic";
 import KafkaClient from "./KafkaClient";
 
-export default class Microservice {
+export interface IMicroservice {
+	microserviceName: string;
+	run: () => Promise<void>;
+}
+
+export default class Microservice implements IMicroservice {
 	public microserviceName: string;
 	private controllers: BaseController[];
 	private kafkaClient: KafkaClient;
@@ -29,7 +34,7 @@ export default class Microservice {
 
 
 
-	public async run() {
+	public async run(): Promise<void> {
 		console.log(1);
 		
 		if (this.adminTopic) {

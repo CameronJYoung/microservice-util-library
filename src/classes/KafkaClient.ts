@@ -4,10 +4,16 @@ import pino from '../singletons/Logger';
 import { jsonToBuffer } from '../utils/messageConversions';
 import ITopic from '../@types/ITopic';
 
-export default class KafkaClient {
+export interface IKafkaClient {
+	produceMessage: (C: Record<string, unknown>, A: string) => Promise<void>;
+	listenToTopics: (C: ITopic[]) => Promise<void>;
+	listenToTopic: (C: ITopic) => Promise<void>;
+}
+
+export default class KafkaClient implements IKafkaClient {
+	protected kafkaInstance: Kafka;
 	private clientId: string;
 	private brokers: Array<string>;
-	protected kafkaInstance: Kafka;
 	private producer: Producer;
 	private consumer: Consumer;
 
