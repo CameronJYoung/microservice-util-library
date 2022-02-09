@@ -2,12 +2,12 @@ import { ITopicConfig } from 'kafkajs';
 
 import KafkaClient, { IKafkaClient } from "./KafkaClient";
 
-export interface IKafkaAdminClient {
+export interface IKafkaAdminClient extends IKafkaClient{
 	getAllTopics: () => Promise<string[]>;
 	createTopic: (C: string) => Promise<boolean>;
 }
 
-export default class KafkaAdminClient extends KafkaClient implements IKafkaClient, IKafkaAdminClient  {
+export default class KafkaAdminClient extends KafkaClient implements IKafkaAdminClient  {
 	private admin = this.kafkaInstance.admin();
 
 	public async getAllTopics() {
