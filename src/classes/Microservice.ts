@@ -1,6 +1,6 @@
-import BaseController from "./BaseController";
+import { IBaseController } from "./BaseController";
 import ITopic from "../@types/ITopic";
-import KafkaClient from "./KafkaClient";
+import { IKafkaClient } from "./KafkaClient";
 
 export interface IMicroservice {
 	microserviceName: string;
@@ -9,12 +9,12 @@ export interface IMicroservice {
 
 export default class Microservice implements IMicroservice {
 	public microserviceName: string;
-	private controllers: BaseController[];
-	private kafkaClient: KafkaClient;
+	private controllers: IBaseController[];
+	private kafkaClient: IKafkaClient;
 	private microserviceTopics: ITopic[];
 	private adminTopic: string|null;
 
-	constructor(microserviceName: string, controllers: BaseController[], kafkaClient: KafkaClient, adminTopic: string|null) {
+	constructor(microserviceName: string, controllers: IBaseController[], kafkaClient: IKafkaClient, adminTopic: string|null) {
 		this.microserviceName = microserviceName;
 		this.controllers = controllers;
 		this.kafkaClient = kafkaClient;
