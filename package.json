@@ -1,6 +1,6 @@
 {
   "name": "@cameronjyoung/microservice-util-library",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "",
   "scripts": {
     "start": "node dist/index.js",
@@ -17,6 +17,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "devDependencies": {
+    "@types/sinon": "^10.0.11",
     "chai": "^4.3.4",
     "eslint": "^8.7.0",
     "lodash": "^4.17.21",
@@ -41,6 +42,7 @@
     "kafkajs": "^1.15.0",
     "knex": "^1.0.1",
     "pino": "^7.6.3",
-    "pino-pretty": "^7.3.0"
+    "pino-pretty": "^7.3.0",
+    "sinon": "^13.0.1"
   }
 }
